@@ -168,5 +168,18 @@ function delete_message($id) {
     mysqli_close($connection);
     return $result;
 }
+function mail_notif(){
+    $to = "rwarren@mail.umw.edu";
+    $subject = "Test Email";
+    $message = "This is a test email.";
+    $headers = "From: rjwftw24@gmail.com";
 
+    // Send email
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Email sent successfully.";
+}   else {
+        echo "Email sending failed.";
+}
+}
+//mail_notif();
 // send_message('vmsroot', 'lknight2@mail.umw.edu', 'I am a bad test """""!!ASDF', "helloAAA'''ffdf!!$$");

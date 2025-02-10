@@ -58,8 +58,8 @@ function buildSelect($name, $disabled=false, $selected=null) {
             <label for="last-name"><em>* </em>Last Name</label>
             <input type="text" id="last-name" name="last-name" required placeholder="Enter your last name">
 
-            <label for="gender"><em>* </em>Gender</label>
-            <select id="gender" name="gender" required>
+            <label for="gender"><em> </em>Gender</label>
+            <select id="gender" name="gender" >
                 <option value="">Choose an option</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -145,34 +145,34 @@ function buildSelect($name, $disabled=false, $selected=null) {
             <label for="phone"><em>* </em>Phone Number</label>
             <input type="tel" id="phone" name="phone" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" required placeholder="Ex. (555) 555-5555">
 
-            <label><em>* </em>Phone Type</label>
+            <label><em> </em>Phone Type</label>
             <div class="radio-group">
-                <input type="radio" id="phone-type-cellphone" name="phone-type" value="cellphone" required><label for="phone-type-cellphone">Cell</label>
-                <input type="radio" id="phone-type-home" name="phone-type" value="home" required><label for="phone-type-home">Home</label>
-                <input type="radio" id="phone-type-work" name="phone-type" value="work" required><label for="phone-type-work">Work</label>
+                <input type="radio" id="phone-type-cellphone" name="phone-type" value="cellphone" ><label for="phone-type-cellphone">Cell</label>
+                <input type="radio" id="phone-type-home" name="phone-type" value="home" ><label for="phone-type-home">Home</label>
+                <input type="radio" id="phone-type-work" name="phone-type" value="work" ><label for="phone-type-work">Work</label>
             </div>
 
-            <label for="contact-when" required><em>* </em>Best Time to Reach You</label>
-            <input type="text" id="contact-when" name="contact-when" required placeholder="Ex. Evenings, Days">
+            <label for="contact-when" ><em> </em>Best Time to Reach You</label>
+            <input type="text" id="contact-when" name="contact-when"  placeholder="Ex. Evenings, Days">
 
-            <label><em>* </em>Preferred Contact Method</label>
+            <label><em> </em>Preferred Contact Method</label>
             <div class="radio-group">
-                <input type="radio" id="method-phone" name="contact-method" value="phone" required><label for="method-phone">Phone call</label>
-                <input type="radio" id="method-text" name="contact-method" value="text" required><label for="method-text">Text</label>
-                <input type="radio" id="method-email" name="contact-method" value="email" required><label for="method-email">E-mail</label>
+                <input type="radio" id="method-phone" name="contact-method" value="phone" ><label for="method-phone">Phone call</label>
+                <input type="radio" id="method-text" name="contact-method" value="text" ><label for="method-text">Text</label>
+                <input type="radio" id="method-email" name="contact-method" value="email" ><label for="method-email">E-mail</label>
             </div>
         </fieldset>
         <fieldset>
             <legend>Emergency Contact</legend>
             <p>Please provide us with someone to contact on your behalf in case of an emergency.</p>
-            <label for="econtact-name" required><em>* </em>Contact Name</label>
-            <input type="text" id="econtact-name" name="econtact-name" required placeholder="Enter emergency contact name">
+            <label for="econtact-name" ><em> </em>Contact Name</label>
+            <input type="text" id="econtact-name" name="econtact-name"  placeholder="Enter emergency contact name">
 
-            <label for="econtact-phone"><em>* </em>Contact Phone Number</label>
-            <input type="tel" id="econtact-phone" name="econtact-phone" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" required placeholder="Enter emergency contact phone number. Ex. (555) 555-5555">
+            <label for="econtact-phone"><em> </em>Contact Phone Number</label>
+            <input type="tel" id="econtact-phone" name="econtact-phone" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"  placeholder="Enter emergency contact phone number. Ex. (555) 555-5555">
 
-            <label for="econtact-name"><em>* </em>Contact Relation to You</label>
-            <input type="text" id="econtact-relation" name="econtact-relation" required placeholder="Ex. Spouse, Mother, Father, Sister, Brother, Friend">
+            <label for="econtact-name"><em> </em>Contact Relation to You</label>
+            <input type="text" id="econtact-relation" name="econtact-relation"  placeholder="Ex. Spouse, Mother, Father, Sister, Brother, Friend">
         </fieldset>
         <fieldset>
             <legend>Volunteer Information</legend>
@@ -294,8 +294,8 @@ function buildSelect($name, $disabled=false, $selected=null) {
                 </div>
             </div>
 
-            <label for="shirt-size"><em>* </em>T-shirt Size</label>
-            <select id="shirt-size" name="shirt-size" required>
+            <label for="shirt-size"><em> </em>T-shirt Size</label>
+            <select id="shirt-size" name="shirt-size" >
                 <option value="S">Small</option>
                 <option value="M">Medium</option>
                 <option value="L">Large</option>

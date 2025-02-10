@@ -50,8 +50,8 @@
             $required = array(
                 'first-name', 'last-name', 'birthdate',
                 'address', 'city', 'state', 'zip', 
-                'email', 'phone', 'phone-type', 'contact-when', 'contact-method',
-                'start-date', 'shirt-size', 'password', 'gender'
+                'email', 'phone',
+                'start-date', 'password',
             );
             $errors = false;
             if (!wereRequiredFieldsSubmitted($args, $required)) {
@@ -91,24 +91,29 @@
                 $errors = true;
                 echo 'bad phone';
             }
+            $phoneType = '';
+            if (!isset($args['phone-type']) || $args['phone-type'] == '') {
+                $args['phone-type'] = 'cellphone';
+                }
             $phoneType = $args['phone-type'];
-            if (!valueConstrainedTo($phoneType, array('cellphone', 'home', 'work'))) {
+            if (!valueConstrainedTo($phoneType, array('cellphone', 'home', 'work',''))) {
                 $errors = true;
                 echo 'bad phone type';
             }
             $contactWhen = $args['contact-when'];
+            $contactMethod = ''; // Initialize $contactMethod
+            if (!isset($args['contact-method']) || $args['contact-method'] == '') {
+                $args['contact-method'] = 'text';
+            }
             $contactMethod = $args['contact-method'];
-            if (!valueConstrainedTo($contactMethod, array('phone', 'text', 'email'))) {
+            if (!valueConstrainedTo($contactMethod, array('phone', 'text', 'email',''))) {
                 $errors = true;
                 echo 'bad contact method';
             }
 
             $econtactName = $args['econtact-name'];
-            $econtactPhone = validateAndFilterPhoneNumber($args['econtact-phone']);
-            if (!$econtactPhone) {
-                $errors = true;
-                echo 'bad e-contact phone';
-            }
+            $econtactPhone = $args['econtact-phone'];
+    
             $econtactRelation = $args['econtact-relation'];
 
             $startDate = validateDate($args['start-date']);
@@ -116,11 +121,11 @@
                 $errors = true;
                 echo 'bad start date';
             }
-            $gender = $args['gender'];
-            if (!valueConstrainedTo($gender, ['Male', 'Female', 'Other'])) {
-                $errors = true;
-                echo 'bad gender';
+            if($args['gender'] == 'Chose an option'){
+                $args['gender'] = 'N/A';
             }
+            $gender = $args['gender'];
+
             $skills = '';
             if (isset($args['skills'])) {
                 $skills = $args['skills'];
@@ -129,10 +134,7 @@
             $hasCamera = isset($args['has-camera']);
             $hasTransportation = isset($args['has-transportation']);
             $shirtSize = $args['shirt-size'];
-            if (!valueConstrainedTo($shirtSize, array('S', 'M', 'L', 'XL', 'XXL'))) {
-                $errors = true;
-                echo 'bad shirt size';
-            }
+            
 
             // May want to enforce password requirements at this step
             $password = password_hash($args['password'], PASSWORD_BCRYPT);

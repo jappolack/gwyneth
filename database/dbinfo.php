@@ -17,12 +17,13 @@
 
 function connect() {
     $host = "localhost"; 
-    $database = "homebasedb";
-    $user = "homebasedb";
-    $pass = "homebasedb";
-    if ($_SERVER['SERVER_NAME'] == 'jenniferp95.sg-host.com') {
-        $user = 'utlkk2vz0z06y';
-        $database = 'db3dpzjdij5qds';
+    $database = "gwynethdb";
+    $user = "gwynethdb";
+    $pass = "gwynethdb";
+    if ($_SERVER['SERVER_NAME'] == 'jenniferp132.sg-host.com') {
+        $user = 'uflcystg6es8w';
+        $pass = "sqtyche1wfuc";
+        $database = 'dbkgwdsk2pylv8';
     } else if ($_SERVER['SERVER_NAME'] == 'gwynethsgiftvms.org') {
         $user = "uybhc603shfl5";
         $pass = "f11kwvhy4yic";
