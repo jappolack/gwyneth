@@ -24,6 +24,11 @@ session_start();
 <html>
     <head>
         <meta HTTP-EQUIV="REFRESH" content="2; url=index.php">
+        <style>
+            .happy-toast {
+                color: red;
+            }
+        </style>
         <title>
             Gwyneth's Gift VMS | Log out Successful
         </title>
